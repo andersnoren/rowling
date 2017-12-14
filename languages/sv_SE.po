@@ -1,0 +1,367 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Rowling v1.04\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-08-11 14:06:28+0000\n"
+"Last-Translator: anders <anders@andersnoren.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:9
+#@ rowling
+msgid "Error 404"
+msgstr "Error 404"
+
+#: 404.php:13
+#@ rowling
+msgid "These are Not the Results You're Looking For"
+msgstr "Det här är inte resultaten du söker efter"
+
+#: 404.php:21
+#@ rowling
+msgid "It seems like you have tried to open a page that doesn't exist. It could have been deleted, moved, or it never existed at all. Either way, you're welcome to search for what you are looking for with the form below."
+msgstr "Det verkar som att du har försökt öppna en sida som inte existerar. Den kan ha raderats, flyttats, eller existerade aldrig överhuvudtaget. Oavsett vilket är du välkommen att söka efter det du letar efter genom formuläret nedan."
+
+#: 404.php:23
+#, php-format
+#@ rowling
+msgid "You can also return to the %s home page %s and continue your search from there."
+msgstr "Du kan också återvända till %s startsidan &s och fortsätta din jakt därifrån."
+
+#: archive.php:10
+#, php-format
+#@ rowling
+msgid "Date: %s"
+msgstr "Datum: %s"
+
+#: archive.php:12
+#, php-format
+#@ rowling
+msgid "Month: %s"
+msgstr "Månad: %s"
+
+#: archive.php:14
+#, php-format
+#@ rowling
+msgid "Year: %s"
+msgstr "År: %s"
+
+#: archive.php:16
+#, php-format
+#@ rowling
+msgid "Category: %s"
+msgstr "Kategori: %s"
+
+#: archive.php:18
+#, php-format
+#@ rowling
+msgid "Tag: %s"
+msgstr "Etikett: %s"
+
+#: archive.php:21
+#, php-format
+#@ rowling
+msgid "Author: %s"
+msgstr "Författare: %s"
+
+#: archive.php:23
+#@ rowling
+msgid "Archive"
+msgstr "Arkiv"
+
+#: archive.php:31
+#: index.php:17
+#: search.php:17
+#@ rowling
+msgid "Page"
+msgstr "Sida"
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: comments.php:16
+#: comments.php:111
+#: single.php:30
+#@ rowling
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Kommentar"
+msgstr[1] "Kommentarer"
+
+#: comments.php:24
+#@ rowling
+msgid "Add Comment"
+msgstr "Skriv kommentar"
+
+#: comments.php:47
+#@ rowling
+msgid "Pingback"
+msgid_plural "Pingbacks"
+msgstr[0] "Pingback"
+msgstr[1] "Pingbacks"
+
+#: comments.php:65
+#: functions.php:249
+#@ rowling
+msgid "Previous"
+msgstr "Föregående"
+
+#: comments.php:71
+#: functions.php:294
+#@ rowling
+msgid "Next"
+msgstr "Nästa"
+
+#: comments.php:119
+#@ rowling
+msgid "Name"
+msgstr "Namn"
+
+#: comments.php:125
+#@ rowling
+msgid "Email"
+msgstr "E-postadress"
+
+#: comments.php:131
+#@ rowling
+msgid "Website"
+msgstr "Webbplats"
+
+#: content-gallery.php:8
+#: content.php:8
+#@ rowling
+msgid "Sticky post:"
+msgstr "Klistrat inlägg:"
+
+#: functions.php:38
+#@ rowling
+msgid "Primary Menu"
+msgstr "Huvudmeny"
+
+#: functions.php:39
+#@ rowling
+msgid "Secondary Menu"
+msgstr "Sekundär meny"
+
+#: functions.php:40
+#@ rowling
+msgid "Social Menu"
+msgstr "Social meny"
+
+#: functions.php:93
+#@ rowling
+msgid "Sidebar"
+msgstr "Sidopanel"
+
+#: functions.php:95
+#@ rowling
+msgid "Widgets in this area will be shown in the sidebar."
+msgstr "Widgets i det här utrymmet visas i sidopanelen."
+
+#: functions.php:133
+#@ rowling
+msgid "Read Next"
+msgstr "Vidare läsning"
+
+#: functions.php:309
+#@ rowling
+msgid "Read More"
+msgstr "Läs mer"
+
+#: functions.php:432
+#@ rowling
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:432
+#: functions.php:470
+#: page.php:43
+#: single.php:24
+#@ rowling
+msgid "Edit"
+msgstr "Redigera"
+
+#: functions.php:448
+#@ rowling
+msgid "Comment by post author"
+msgstr "Kommentar av inläggsförfattaren"
+
+#: functions.php:476
+#@ rowling
+msgid "Awaiting moderation"
+msgstr "Inväntar moderation"
+
+#: functions.php:483
+#@ rowling
+msgid "Reply"
+msgstr "Svara"
+
+#: functions.php:525
+#: functions.php:561
+#@ rowling
+msgid "Logo"
+msgstr "Logotyp"
+
+#: functions.php:527
+#@ rowling
+msgid "Upload a logo to replace the default site title in the header."
+msgstr "Ladda upp en logotyp att visa istället för sidans titel i sidhuvudet."
+
+#: functions.php:553
+#@ rowling
+msgid "Accent Color"
+msgstr "Accentfärg"
+
+#: page.php:57
+#: single.php:134
+#@ rowling
+msgid "We couldn't find any posts that matched your query. Please try again."
+msgstr "Vi kunde inte hitta några inlägg som matchade din sökning. Vänligen försök igen."
+
+#: search.php:11
+#: search.php:42
+#@ rowling
+msgid "Search results:"
+msgstr "Sökresultat:"
+
+#: search.php:55
+#@ rowling
+msgid "No results. Try again, would you kindly?"
+msgstr "Inga träffar. Vänligen försök igen."
+
+#: searchform.php:2
+#@ rowling
+msgid "Search form"
+msgstr "Sökformulär"
+
+#: single.php:24
+#@ rowling
+msgid "Posted"
+msgstr "Postades"
+
+#: single.php:24
+#@ rowling
+msgid "by"
+msgstr "av"
+
+#: single.php:24
+#@ rowling
+msgid "on"
+msgstr "den"
+
+#: single.php:29
+#: single.php:31
+#@ rowling
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: single.php:80
+#@ rowling
+msgid "Pages:"
+msgstr "Sidor:"
+
+#: widgets/flickr-widget.php:6
+#@ rowling
+msgid "Displays your latest Flickr photos."
+msgstr "Visar dina senaste Flickr-bilder."
+
+#: widgets/flickr-widget.php:67
+#: widgets/recent-comments.php:109
+#: widgets/recent-posts.php:116
+#@ rowling
+msgid "Title"
+msgstr "Titel"
+
+#: widgets/flickr-widget.php:73
+#@ rowling
+msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
+msgstr "Flickr ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
+
+#: widgets/flickr-widget.php:79
+#@ rowling
+msgid "Number of images to display"
+msgstr "Antal bilder att visa"
+
+#: widgets/recent-comments.php:6
+#@ rowling
+msgid "Displays recent comments with user avatars."
+msgstr "Visar de senaste kommentarerna på webbplatsen."
+
+#: widgets/recent-comments.php:54
+#@ rowling
+msgid "Comment to"
+msgstr "Kommentar till"
+
+#: widgets/recent-comments.php:54
+#@ rowling
+msgid "posted"
+msgstr "postades"
+
+#: widgets/recent-comments.php:114
+#@ rowling
+msgid "Number of comments to display"
+msgstr "Antal kommentarer att visa"
+
+#: widgets/recent-comments.php:116
+#: widgets/recent-posts.php:123
+#@ rowling
+msgid "Defaults to 5 if empty"
+msgstr "Om fältet lämnas tomt kommer 5 att visas"
+
+#: widgets/recent-posts.php:6
+#@ rowling
+msgid "Displays recent blog entries."
+msgstr "Visar de senaste blogginläggen."
+
+#: widgets/recent-posts.php:121
+#@ rowling
+msgid "Number of posts to display"
+msgstr "Antal inlägg att visa"
+
+#: functions.php:517
+#@ rowling
+msgid "Options for Rowling"
+msgstr "Alternativ för Rowling"
+
+#: functions.php:520
+#@ rowling
+msgid "Allows you to customize theme settings for Rowling."
+msgstr "Låter dig ställa in temainställningar för Rowling."
+
+#: comments.php:91
+#@ rowling
+msgid "Comments are Closed"
+msgstr "Kommentarsfältet är stängt"
+
+#: footer.php:5
+#@ rowling
+msgid "To the top"
+msgstr "Till toppen"
+
+#: sidebar.php:27
+#: widgets/recent-posts.php:7
+#@ rowling
+msgid "Recent Posts"
+msgstr "Senaste inläggen"
+
+#: widgets/flickr-widget.php:7
+#@ rowling
+msgid "Flickr Widget"
+msgstr "Flickr-widget"
+
+#: widgets/recent-comments.php:7
+#@ rowling
+msgid "Recent Comments"
+msgstr "Senaste kommentarerna"
+
