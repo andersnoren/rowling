@@ -4,9 +4,9 @@
 			
 	<div class="content">				
 																							                    
-		<?php if ( have_posts() ) : ?>
-		
-			<?php $paged = get_query_var( 'paged' ) ?: 1;
+		<?php if ( have_posts() ) :
+			
+			$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 			
 			if ( 1 < $paged ) : ?>
 			

@@ -20,7 +20,7 @@
 				
 					<p><?php _e( "It seems like you have tried to open a page that doesn't exist. It could have been deleted, moved, or it never existed at all. Either way, you're welcome to search for what you are looking for with the form below.", "rowling" ); ?></p>
 					
-					<p><?php printf(__( 'You can also return to the %s home page %s and continue your search from there.', 'rowling' ), '<a href="' . get_home_url() .  '">', '</a>' ); ?></p>
+					<p><?php printf(__( 'You can also return to the %1$s home page %2$s and continue your search from there.', 'rowling' ), '<a href="' . get_home_url() .  '">', '</a>' ); ?></p>
 					
 					<p><?php get_search_form(); ?></p>
 				

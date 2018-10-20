@@ -72,6 +72,21 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.13 (2018-10-20)
+-------------------------
+- Updated with Gutenberg support
+	- Gutenberg editor styles
+	- Styling of Gutenberg blocks
+	- Custom Rowling Gutenberg palette
+	- Custom Rowling Gutenberg typography styles
+- Added option to disable Google Fonts with a translateable string
+- Updated theme description
+- Removed the languages sub folder, since that is handled by WordPress.org
+
+Version 1.12 (2018-05-24)
+-------------------------
+- Fixed output of cookie checkbox in comments
+
 Version 1.11 (2017-12-12)
 -------------------------
 - Fixed recent posts issue with the current post

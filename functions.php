@@ -86,10 +86,28 @@ if ( ! function_exists( 'rowling_load_style' ) ) {
 
 		if ( ! is_admin() ) {
 
-			wp_register_style( 'rowling_google_fonts', '//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic|Merriweather:700,900,400italic' );
+			$dependencies = array();
+
+			/**
+			 * Translators: If there are characters in your language that are not
+			 * supported by the theme fonts, translate this to 'off'. Do not translate
+			 * into your own language.
+			 */
+			$google_fonts = _x( 'on', 'Google Fonts: on or off', 'rowling' );
+
+			if ( 'off' !== $google_fonts ) {
+
+				// Register Google Fonts
+				wp_register_style( 'rowling_google_fonts', '//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic|Merriweather:700,900,400italic' );
+				$dependencies[] = 'rowling_google_fonts';
+
+			}
+
 			wp_register_style( 'rowling_fontawesome', get_template_directory_uri() . '/fa/css/font-awesome.css' );
 
-			wp_enqueue_style( 'rowling_style', get_stylesheet_uri(), array( 'rowling_google_fonts', 'rowling_fontawesome' ) );
+			$dependencies[] = 'rowling_fontawesome';
+
+			wp_enqueue_style( 'rowling_style', get_stylesheet_uri(), $dependencies );
 
 		}
 
@@ -107,9 +125,21 @@ if ( ! function_exists( 'rowling_load_style' ) ) {
 if ( ! function_exists( 'rowling_add_editor_styles' ) ) {
    
 	function rowling_add_editor_styles() {
+
 		add_editor_style( 'rowling-editor-styles.css' );
-		$font_url = '//fonts.googleapis.com/css?family=Lato:400,700,900|Playfair+Display:400,700,400italic';
-		add_editor_style( str_replace( ', ', '%2C', $font_url ) );
+
+		/**
+		 * Translators: If there are characters in your language that are not
+		 * supported by the theme fonts, translate this to 'off'. Do not translate
+		 * into your own language.
+		 */
+		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'rowling' );
+
+		if ( 'off' !== $google_fonts ) {
+			$font_url = '//fonts.googleapis.com/css?family=Lato:400,700,900|Playfair+Display:400,700,400italic';
+			add_editor_style( str_replace( ', ', '%2C', $font_url ) );
+		}
+
 	}
 	add_action( 'init', 'rowling_add_editor_styles' );
 
@@ -293,7 +323,7 @@ if ( ! function_exists( 'rowling_archive_navigation' ) ) {
 				<?php 
 				if ( get_previous_posts_link() ) echo '<li class="archive-nav-newer">' . get_previous_posts_link( '&larr; ' . __( 'Previous', 'rowling' ) ) . '</li>';
 
-				$paged = get_query_var( 'paged' ) ?: 1;
+				$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 				$max   = intval( $wp_query->max_num_pages );
 			
 				// Add current page to the array
@@ -512,7 +542,6 @@ if ( ! function_exists( 'rowling_flexslider' ) ) {
 if ( ! function_exists( 'rowling_comment' ) ) {
 
 	function rowling_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
 			case 'pingback' :
 			case 'trackback' :
@@ -776,5 +805,125 @@ add_action( 'wp_head' , array( 'rowling_customize' , 'rowling_header_output' ) )
 
 // Enqueue live preview javascript in Theme Customizer admin screen
 add_action( 'customize_preview_init' , array( 'rowling_customize' , 'rowling_live_preview' ) );
+
+
+/* ---------------------------------------------------------------------------------------------
+   SPECIFY GUTENBERG SUPPORT
+------------------------------------------------------------------------------------------------ */
+
+
+if ( ! function_exists( 'rowling_add_gutenberg_features' ) ) :
+
+	function rowling_add_gutenberg_features() {
+
+		/* Gutenberg Features --------------------------------------- */
+
+		add_theme_support( 'align-wide' );
+
+		/* Gutenberg Palette --------------------------------------- */
+
+		$accent_color = get_theme_mod( 'accent_color' ) ? get_theme_mod( 'accent_color' ) : '#0093C2';
+
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name' 	=> _x( 'Accent', 'Name of the accent color in the Gutenberg palette', 'rowling' ),
+				'slug' 	=> 'accent',
+				'color' => $accent_color,
+			),
+			array(
+				'name' 	=> _x( 'Black', 'Name of the black color in the Gutenberg palette', 'rowling' ),
+				'slug' 	=> 'black',
+				'color' => '#111',
+			),
+			array(
+				'name' 	=> _x( 'Dark Gray', 'Name of the dark gray color in the Gutenberg palette', 'rowling' ),
+				'slug' 	=> 'dark-gray',
+				'color' => '#333',
+			),
+			array(
+				'name' 	=> _x( 'Medium Gray', 'Name of the medium gray color in the Gutenberg palette', 'rowling' ),
+				'slug' 	=> 'medium-gray',
+				'color' => '#555',
+			),
+			array(
+				'name' 	=> _x( 'Light Gray', 'Name of the light gray color in the Gutenberg palette', 'rowling' ),
+				'slug' 	=> 'light-gray',
+				'color' => '#777',
+			),
+			array(
+				'name' 	=> _x( 'White', 'Name of the white color in the Gutenberg palette', 'rowling' ),
+				'slug' 	=> 'white',
+				'color' => '#fff',
+			),
+		) );
+
+		/* Gutenberg Font Sizes --------------------------------------- */
+
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+				'name' 		=> _x( 'Small', 'Name of the small font size in Gutenberg', 'rowling' ),
+				'shortName' => _x( 'S', 'Short name of the small font size in the Gutenberg editor.', 'rowling' ),
+				'size' 		=> 15,
+				'slug' 		=> 'small',
+			),
+			array(
+				'name' 		=> _x( 'Regular', 'Name of the regular font size in Gutenberg', 'rowling' ),
+				'shortName' => _x( 'M', 'Short name of the regular font size in the Gutenberg editor.', 'rowling' ),
+				'size' 		=> 17,
+				'slug' 		=> 'regular',
+			),
+			array(
+				'name' 		=> _x( 'Large', 'Name of the large font size in Gutenberg', 'rowling' ),
+				'shortName' => _x( 'L', 'Short name of the large font size in the Gutenberg editor.', 'rowling' ),
+				'size' 		=> 24,
+				'slug' 		=> 'large',
+			),
+			array(
+				'name' 		=> _x( 'Larger', 'Name of the larger font size in Gutenberg', 'rowling' ),
+				'shortName' => _x( 'XL', 'Short name of the larger font size in the Gutenberg editor.', 'rowling' ),
+				'size' 		=> 28,
+				'slug' 		=> 'larger',
+			),
+		) );
+
+	}
+	add_action( 'after_setup_theme', 'rowling_add_gutenberg_features' );
+
+endif;
+
+
+/* ---------------------------------------------------------------------------------------------
+   GUTENBERG EDITOR STYLES
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'rowling_block_editor_styles' ) ) :
+
+	function rowling_block_editor_styles() {
+
+		$dependencies = array();
+
+		/**
+		 * Translators: If there are characters in your language that are not
+		 * supported by the theme fonts, translate this to 'off'. Do not translate
+		 * into your own language.
+		 */
+		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'rowling' );
+
+		if ( 'off' !== $google_fonts ) {
+
+			// Register Google Fonts
+			wp_register_style( 'rowling-block-editor-styles-font', '//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic|Merriweather:700,900,400italic', false, 1.0, 'all' );
+			$dependencies[] = 'rowling-block-editor-styles-font';
+
+		}
+
+		// Enqueue the editor styles
+		wp_enqueue_style( 'rowling-block-editor-styles', get_theme_file_uri( '/rowling-gutenberg-editor-style.css' ), $dependencies, '1.0', 'all' );
+
+	}
+	add_action( 'enqueue_block_editor_assets', 'rowling_block_editor_styles', 1 );
+
+endif;
 
 ?>

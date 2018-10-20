@@ -110,7 +110,7 @@ body#tinymce.wp-editor blockquote:after {
 body#tinymce.wp-editor blockquote cite {
 	display: block;
 	margin-top: 1.1em;
-	font-family: 'Lato', Helvetica, sans-serif;
+	font-family: Lato, Helvetica, sans-serif;
 	font-size: 0.75em;
 	font-weight: 900;
 	font-style: normal;
@@ -267,7 +267,7 @@ body#tinymce.wp-editor .aligncenter img {
 body#tinymce.wp-editor .wp-caption-text,
 body#tinymce.wp-editor .gallery-caption {
 	margin: 12px auto 0;
-	font-family: 'Lato', Helvetica, sans-serif;
+	font-family: Lato, Helvetica, sans-serif;
 	font-size: 0.9rem;
 	line-height: 130%; 
 	font-weight: 700;
@@ -335,7 +335,7 @@ body#tinymce.wp-editor fieldset {
 }
 
 body#tinymce.wp-editor fieldset legend {
-	font-family: 'Lato', Helvetica, sans-serif;
+	font-family: Lato, Helvetica, sans-serif;
 	font-size: 0.8rem;
 	line-height: 1;
 	font-weight: 900;
@@ -348,13 +348,13 @@ body#tinymce.wp-editor fieldset legend {
 
 body#tinymce.wp-editor label {
 	font-size: 1rem;
-	font-family: 'Lato', Helvetica, sans-serif;
+	font-family: Lato, Helvetica, sans-serif;
 	font-weight: 700;
 }
 
 body#tinymce.wp-editor input,
 body#tinymce.wp-editor textarea { 
-	font-family: 'Lato', Helvetica, sans-serif; 
+	font-family: Lato, Helvetica, sans-serif; 
 }
 
 body#tinymce.wp-editor input[type="text"],
