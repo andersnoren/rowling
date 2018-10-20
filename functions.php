@@ -690,90 +690,89 @@ class rowling_customize {
    }
 
    public static function rowling_header_output() {
-      ?>
       
-	      <!-- Customizer CSS --> 
-	      
-	      <style type="text/css">
-	           <?php self::rowling_generate_css( 'body a', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( 'body a:hover', 'color', 'accent_color' ); ?>
+		echo '<!-- Customizer CSS -->';
+		echo '<style type="text/css">';
 
-	           <?php self::rowling_generate_css( '.blog-title a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.navigation .section-inner', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.primary-menu ul li:hover > a', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.search-container .search-button:hover', 'color', 'accent_color' ); ?>
-	           
-	           <?php self::rowling_generate_css( '.sticky .sticky-tag', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.sticky .sticky-tag:after', 'border-right-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.sticky .sticky-tag:after', 'border-left-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-categories', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.single .post-meta a', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.single .post-meta a:hover', 'border-bottom-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.single-post .post-image-caption .fa', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.related-post .category', 'color', 'accent_color' ); ?>
-	           
-	           <?php self::rowling_generate_css( '.post-content a', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content a:hover', 'border-bottom-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content p.intro', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content blockquote:after', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content fieldset legend', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content input[type="submit"]', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content input[type="button"]', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content input[type="reset"]', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content input[type="submit"]:hover', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content input[type="button"]:hover', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content input[type="reset"]:hover', 'background', 'accent_color' ); ?>
-	           
-	           <?php self::rowling_generate_css( '.page-edit-link', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-content .page-links a:hover', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-tags a:hover', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-tags a:hover:before', 'border-right-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.post-navigation h4 a:hover', 'color', 'accent_color' ); ?>
-	           
-	           <?php self::rowling_generate_css( '.no-comments .fa', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.comments-title-container .fa', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.comment-reply-title .fa', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.comments-title-link a', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.comments-title-link a:hover', 'border-bottom-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.comments .pingbacks li a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.comment-header h4 a', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.bypostauthor .comment-author-icon', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.form-submit #submit', 'background-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.comments-nav a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.pingbacks-title', 'border-bottom-color', 'accent_color' ); ?>
+			self::rowling_generate_css( 'body a', 'color', 'accent_color' );
+			self::rowling_generate_css( 'body a:hover', 'color', 'accent_color' );
 
-	           <?php self::rowling_generate_css( '.page-title h4', 'border-bottom-color', 'accent_color' ); ?>	           
-	           <?php self::rowling_generate_css( '.archive-nav a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.archive-nav a:hover', 'border-top-color', 'accent_color' ); ?>
-				
-			   <?php self::rowling_generate_css( '.widget-title', 'border-bottom-color', 'accent_color' ); ?>	           
-	           <?php self::rowling_generate_css( '.widget-content .textwidget a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.widget_archive li a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.widget_categories li a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.widget_meta li a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.widget_nav_menu li a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.widget_rss .widget-content ul a.rsswidget:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '#wp-calendar thead th', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '#wp-calendar tfoot a:hover', 'color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.widget .tagcloud a:hover', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.widget .tagcloud a:hover:before', 'border-right-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.footer .widget .tagcloud a:hover', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.footer .widget .tagcloud a:hover:before', 'border-right-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.wrapper .search-button:hover', 'color', 'accent_color' ); ?>
-	           
-	           <?php self::rowling_generate_css( '.to-the-top', 'background', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.credits .copyright a:hover', 'color', 'accent_color' ); ?>
+			self::rowling_generate_css( '.blog-title a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.navigation .section-inner', 'background', 'accent_color' );
+			self::rowling_generate_css( '.primary-menu ul li:hover > a', 'color', 'accent_color' );
+			self::rowling_generate_css( '.search-container .search-button:hover', 'color', 'accent_color' );
 
-	           <?php self::rowling_generate_css( '.nav-toggle', 'background-color', 'accent_color' ); ?>
-	           <?php self::rowling_generate_css( '.mobile-menu', 'background', 'accent_color' ); ?>
-				
-				
-	      </style> 
+			self::rowling_generate_css( '.sticky .sticky-tag', 'background', 'accent_color' );
+			self::rowling_generate_css( '.sticky .sticky-tag:after', 'border-right-color', 'accent_color' );
+			self::rowling_generate_css( '.sticky .sticky-tag:after', 'border-left-color', 'accent_color' );
+			self::rowling_generate_css( '.post-categories', 'color', 'accent_color' );
+			self::rowling_generate_css( '.single .post-meta a', 'color', 'accent_color' );
+			self::rowling_generate_css( '.single .post-meta a:hover', 'border-bottom-color', 'accent_color' );
+			self::rowling_generate_css( '.single-post .post-image-caption .fa', 'color', 'accent_color' );
+			self::rowling_generate_css( '.related-post .category', 'color', 'accent_color' );
+
+			self::rowling_generate_css( '.post-content a', 'color', 'accent_color' );
+			self::rowling_generate_css( '.post-content a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.post-content a:hover', 'border-bottom-color', 'accent_color' );
+			self::rowling_generate_css( '.post-content p.intro', 'color', 'accent_color' );
+			self::rowling_generate_css( '.post-content blockquote:after', 'color', 'accent_color' );
+			self::rowling_generate_css( '.post-content fieldset legend', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-content input[type="submit"]', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-content input[type="button"]', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-content input[type="reset"]', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-content input[type="submit"]:hover', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-content input[type="button"]:hover', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-content input[type="reset"]:hover', 'background', 'accent_color' );
+
+			self::rowling_generate_css( '.post-content .has-accent-color', 'color', 'accent_color' );
+			self::rowling_generate_css( '.post-content .has-accent-background-color', 'background-color', 'accent_color' );
+
+			self::rowling_generate_css( '.page-edit-link', 'color', 'accent_color' );
+			self::rowling_generate_css( '.post-content .page-links a:hover', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-tags a:hover', 'background', 'accent_color' );
+			self::rowling_generate_css( '.post-tags a:hover:before', 'border-right-color', 'accent_color' );
+			self::rowling_generate_css( '.post-navigation h4 a:hover', 'color', 'accent_color' );
+
+			self::rowling_generate_css( '.no-comments .fa', 'color', 'accent_color' );
+			self::rowling_generate_css( '.comments-title-container .fa', 'color', 'accent_color' );
+			self::rowling_generate_css( '.comment-reply-title .fa', 'color', 'accent_color' );
+			self::rowling_generate_css( '.comments-title-link a', 'color', 'accent_color' );
+			self::rowling_generate_css( '.comments-title-link a:hover', 'border-bottom-color', 'accent_color' );
+			self::rowling_generate_css( '.comments .pingbacks li a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.comment-header h4 a', 'color', 'accent_color' );
+			self::rowling_generate_css( '.bypostauthor .comment-author-icon', 'background', 'accent_color' );
+			self::rowling_generate_css( '.form-submit #submit', 'background-color', 'accent_color' );
+			self::rowling_generate_css( '.comments-nav a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.pingbacks-title', 'border-bottom-color', 'accent_color' );
+
+			self::rowling_generate_css( '.page-title h4', 'border-bottom-color', 'accent_color' );	           
+			self::rowling_generate_css( '.archive-nav a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.archive-nav a:hover', 'border-top-color', 'accent_color' );
+
+			self::rowling_generate_css( '.widget-title', 'border-bottom-color', 'accent_color' );	           
+			self::rowling_generate_css( '.widget-content .textwidget a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.widget_archive li a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.widget_categories li a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.widget_meta li a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.widget_nav_menu li a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.widget_rss .widget-content ul a.rsswidget:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '#wp-calendar thead th', 'color', 'accent_color' );
+			self::rowling_generate_css( '#wp-calendar tfoot a:hover', 'color', 'accent_color' );
+			self::rowling_generate_css( '.widget .tagcloud a:hover', 'background', 'accent_color' );
+			self::rowling_generate_css( '.widget .tagcloud a:hover:before', 'border-right-color', 'accent_color' );
+			self::rowling_generate_css( '.footer .widget .tagcloud a:hover', 'background', 'accent_color' );
+			self::rowling_generate_css( '.footer .widget .tagcloud a:hover:before', 'border-right-color', 'accent_color' );
+			self::rowling_generate_css( '.wrapper .search-button:hover', 'color', 'accent_color' );
+
+			self::rowling_generate_css( '.to-the-top', 'background', 'accent_color' );
+			self::rowling_generate_css( '.credits .copyright a:hover', 'color', 'accent_color' );
+
+			self::rowling_generate_css( '.nav-toggle', 'background-color', 'accent_color' );
+			self::rowling_generate_css( '.mobile-menu', 'background', 'accent_color' );
+
+		echo '</style>';
+		echo '<!--/Customizer CSS-->';
 	      
-	      <!--/Customizer CSS-->
-	      
-      <?php
    }
    
 	public static function rowling_live_preview() {
