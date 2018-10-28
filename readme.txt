@@ -80,8 +80,10 @@ Version 1.13 (2018-10-20)
 	- Custom Rowling Gutenberg palette
 	- Custom Rowling Gutenberg typography styles
 - Added option to disable Google Fonts with a translateable string
+- Improved compatibility with PHP < 5.5
 - Updated theme description
 - Removed the languages sub folder, since that is handled by WordPress.org
+- Slight style tweaks
 
 Version 1.12 (2018-05-24)
 -------------------------
