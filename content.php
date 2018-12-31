@@ -1,6 +1,8 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'post' ); ?>>
 
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php $post_format = get_post_format() ? get_post_format() : 'standard'; ?>
+
+	<?php if ( has_post_thumbnail() || $post_format == 'gallery' ) : ?>
 	
 		<div class="post-image">
 			
@@ -9,12 +11,18 @@
 					<span class="fa fw fa-star"></span>
 				</a>
 			<?php endif; ?>
+
+			<?php if ( $post_format == 'gallery' ) : ?>
+
+				<?php rowling_flexslider( 'post-image-thumb' ); ?>
+
+			<?php elseif ( has_post_thumbnail() ) : ?>
 		
-			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				
-				<?php the_post_thumbnail( 'post-image-thumb' ); ?>
-				
-			</a>
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'post-image-thumb' ); ?>
+				</a>
+
+			<?php endif; ?>
 			
 		</div><!-- .post-image -->
 			
@@ -28,7 +36,7 @@
 		
 		<?php if ( get_the_title() ) : ?>
 			
-		    <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+		    <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		    
 		<?php endif; ?>
 		

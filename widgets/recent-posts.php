@@ -51,7 +51,7 @@ class rowling_recent_posts extends WP_Widget {
 						
 							<?php setup_postdata( $post ); ?>
 						
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<a href="<?php the_permalink(); ?>">
 									
 								<div class="post-icon">
 								

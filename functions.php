@@ -219,7 +219,7 @@ if ( ! function_exists( 'rowling_html_js_class' ) ) {
 
 if ( ! function_exists( 'rowling_related_posts' ) ) {
 
-	function rowling_related_posts( $number_of_posts ) { ?>
+	function rowling_related_posts( $number_of_posts = 3 ) { ?>
 		
 		<div class="related-posts">
 			
@@ -492,7 +492,7 @@ if ( ! function_exists( 'rowling_flexslider' ) ) {
 		
 			<?php if ( ! is_single() ) : // Make it a link if it's an archive ?>
 		
-				<a class="flexslider" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				<a class="flexslider" href="<?php the_permalink(); ?>">
 					
 			<?php else : // ...and just a div if it's a single post ?>
 			

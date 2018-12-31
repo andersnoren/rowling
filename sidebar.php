@@ -5,7 +5,7 @@
 		
 		dynamic_sidebar( 'sidebar' ); 
 		
-	} else { // Fallback if the sideabr widget area is empty
+	} else { // Fallback if the sidebar widget area is empty
 		
 		echo '<div class="widgets">';
 		

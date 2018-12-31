@@ -5,7 +5,7 @@
 	Theme Name: Rowling
     Text Domain: rowling
 	Theme URI: http://www.andersnoren.se/teman/rowling-wordpress-theme/
-	Version: 1.13
+	Version: 1.16
 	Description: Rowling is a clean, simple and elegant magazine theme for WordPress. It features a responsive design, great typography, Gutenberg support, social menu support, custom accent color support, custom logo support, gallery post format support, editor style support, and a Flickr widget. Demo: http://www.andersnoren.se/themes/rowling/
 	Tags: blog, three-columns, right-sidebar, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -72,8 +72,6 @@ ol, ul {
 blockquote:before, blockquote:after {
 	content:"";
 }
-
-a { outline:none; }
 
 input[type=search] {
    -moz-appearance:none;
@@ -619,9 +617,6 @@ body a,
 	display: block;
 	padding: 20px;
 	line-height: 130%;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 	border-bottom: 1px solid rgba( 255, 255, 255, 0.075 );
 	color: #fff;
 	font-weight: 900;
@@ -671,10 +666,13 @@ body a,
 /* -------------------------------------------------------------------------------- */
 
 
+.posts {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .posts .post {
-	width: 47%;
-	display: inline-block;
-	vertical-align: top;
+	width: 47.5%;
 }
 
 .posts .post + .post {
@@ -766,7 +764,7 @@ body a,
 	font-size: 1.5em;
 	line-height: 135%;
 	font-weight: 900;
-	letter-spacing: -1px;
+	letter-spacing: -0.01em;
 	-ms-word-break: break-word;
 	word-break: break-word;
 }
@@ -1127,7 +1125,10 @@ body a,
 
 .related-post + .related-post { margin-top: 25px; }
 
-.related-post img { display: block; }
+.related-post img { 
+	display: block; 
+	width: 100%;
+}
 
 .related-post .category {
 	margin: 10px 0 0;
@@ -3016,9 +3017,6 @@ img#wpstats { display: none !important; } /* silly wp stats */
 	
 	/* Content -------------------------------------- */
 	
-	
-	.posts .post { width: 46.75%; }
-	
 	.post-title { 
 		font-size: 1.25em; 
 		line-height: 130%;
@@ -3259,7 +3257,6 @@ img#wpstats { display: none !important; } /* silly wp stats */
 	
 	.posts .post {
 		width: 100%;
-		display: block;
 	}
 	
 	.posts .post + .post,
