@@ -16,6 +16,10 @@
 	-webkit-font-smoothing: antialiased;
 }
 
+.editor-styles-wrapper > * {
+	font-family: Lato, Helvetica, sans-serif;
+}
+
 .editor-rich-text__tinymce * {
 	font-family: inherit !important;
 }

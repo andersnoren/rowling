@@ -12,6 +12,14 @@
 	</head>
 	
 	<body <?php body_class(); ?>>
+
+		<?php 
+		if ( function_exists( 'wp_body_open' ) ) {
+			wp_body_open(); 
+		}
+		?>
+
+		<a class="skip-link button" href="#site-content"><?php _e( 'Skip to the content', 'rowling' ); ?></a>
 		
 		<?php if ( has_nav_menu( 'secondary' ) || has_nav_menu( 'social' ) ) : ?>
 		
@@ -87,7 +95,7 @@
 				
 					<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : 
 						
-						$title_type = is_singular() ? '1' : '2';
+						$title_type = is_singular() ? '2' : '1';
 						?>
 				
 						<h<?php echo $title_type ?> class="blog-title">
@@ -166,3 +174,5 @@
 			</ul><!-- .mobile-menu -->
 				
 		</div><!-- .header-wrapper -->
+
+		<main id="site-content">

@@ -4,12 +4,12 @@
 
 	Theme Name: Rowling
     Text Domain: rowling
-	Theme URI: http://www.andersnoren.se/teman/rowling-wordpress-theme/
-	Version: 1.16
-	Description: Rowling is a clean, simple and elegant magazine theme for WordPress. It features a responsive design, great typography, Gutenberg support, social menu support, custom accent color support, custom logo support, gallery post format support, editor style support, and a Flickr widget. Demo: http://www.andersnoren.se/themes/rowling/
-	Tags: blog, three-columns, right-sidebar, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+	Theme URI: https://www.andersnoren.se/teman/rowling-wordpress-theme/
+	Version: 1.19
+	Description: Rowling is a clean, simple and elegant magazine theme for WordPress. It features a responsive design, great typography, Block Editor/Gutenberg support, social menu support, custom accent color support, custom logo support, gallery post format support, editor style support, and a Flickr widget. Demo: https://www.andersnoren.se/themes/rowling/
+	Tags: blog, three-columns, right-sidebar, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 	Author: Anders Norén
-	Author URI: http://www.andersnoren.se
+	Author URI: https://www.andersnoren.se
 	License: GNU General Public License version 2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Text Domain: rowling
@@ -137,7 +137,62 @@ img {
 :-ms-input-placeholder { color: #A9A9A9; }
 
 
-/* Transitions --------------------------------------- */
+/* Screen Reader Text ------------------------ */
+
+.screen-reader-text {
+	clip: rect( .1rem, .1rem, .1rem, .1rem );
+	height: .1rem;
+	overflow: hidden;
+	position: absolute !important;
+		left: -999999rem;
+	width: .1rem;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: .3rem;
+	box-shadow: 0 0 .2rem .2rem rgba( 0, 0, 0, 0.6 );
+	clip: auto !important;
+	display: block;
+	font-size: 1.4rem;
+	font-weight: 700;
+	height: auto;
+	left: .5rem;
+	line-height: normal;
+	padding: 1.5rem 2.3rem 1.4rem 2.3rem;
+	text-decoration: none;
+	top: .5rem;
+	width: auto;
+	z-index: 100000;
+}
+
+
+/* Skip Link --------------------------------- */
+
+.skip-link {
+	position: absolute;
+		left: -9999rem;
+		top: 2.5rem;
+	z-index: 999999999;
+}
+
+.skip-link:focus {
+	left: 2.5rem;
+	text-decoration: none;
+}
+
+
+/* Accessibility Settings -------------------- */
+
+@media ( prefers-reduced-motion: reduce ) {
+	* {
+		animation-duration: 0s !important;
+		transition-duration: 0s !important;
+	}
+}
+
+
+/* Transitions ------------------------------- */
 
 
 body a,
@@ -161,6 +216,7 @@ body a,
 .flex-direction-nav .flex-next {
 	transition: all .2s ease-in-out;
 }
+
 
 /* -------------------------------------------------------------------------------- */
 /*	2.	Structure
@@ -342,12 +398,6 @@ body a,
 }
 
 .social-menu li:first-child { margin-left: 0; }
-
-.screen-reader-text {
-	position: absolute;
-	top: -9999em;
-	left: -9999em;
-}
 
 .social-menu a {
 	display: block;
@@ -1550,6 +1600,7 @@ figure {
 	outline: none;
 }
 
+.button,
 .post-content input[type="submit"],
 .post-content input[type="reset"],
 .post-content input[type="button"] {
@@ -1577,6 +1628,7 @@ figure {
 	margin-left: 5px;
 }
 
+.button:hover,
 .post-content input[type="submit"]:hover,
 .post-content input[type="reset"]:hover,
 .post-content input[type="button"]:hover {
@@ -1585,7 +1637,6 @@ figure {
 	color: #fff;
 }
 
-.post-content input[type="submit"]:focus,
 .post-content input[type="submit"]:active {
 	outline: none;
 }

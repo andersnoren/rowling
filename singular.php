@@ -32,7 +32,7 @@
 
 								<span class="resp"><?php _e( 'Posted', 'rowling' ); ?></span> <span class="post-meta-author"><?php _e( 'by', 'rowling' ); ?> <a href="<?php echo $author_posts_url; ?>"><?php the_author_meta( 'display_name' ); ?></a></span> <span class="post-meta-date"><?php _e( 'on', 'rowling' ); ?> <a href="<?php the_permalink(); ?>"><?php the_time(get_option( 'date_format' ) ); ?></a></span> <?php edit_post_link(__( 'Edit', 'rowling' ), ' &mdash; ' ); ?>
 
-								<?php if ( comments_open() ) : ?>
+								<?php if ( comments_open() && ! post_password_required() ) : ?>
 									<span class="post-comments">
 										<?php 
 											comments_popup_link(
@@ -54,11 +54,11 @@
 
 					$post_format = get_post_format() ? get_post_format() : 'standard';
 
-					if ( $post_format == 'gallery' ) :
+					if ( $post_format == 'gallery' && ! post_password_required() ) :
 					
 						rowling_flexslider( 'post-image' );
 						
-					elseif ( has_post_thumbnail() ) : ?>
+					elseif ( has_post_thumbnail() && ! post_password_required() ) : ?>
 			
 						<div class="post-image">
 								

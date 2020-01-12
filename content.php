@@ -2,7 +2,7 @@
 
 	<?php $post_format = get_post_format() ? get_post_format() : 'standard'; ?>
 
-	<?php if ( has_post_thumbnail() || $post_format == 'gallery' ) : ?>
+	<?php if ( ( has_post_thumbnail() || $post_format == 'gallery' ) && ! post_password_required() ) : ?>
 	
 		<div class="post-image">
 			
