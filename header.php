@@ -25,26 +25,26 @@
 		
 			<div class="top-nav">
 				
-				<div class="section-inner">
-					
-					<ul class="secondary-menu">
-						
-						<?php 
-						if ( has_nav_menu( 'secondary' ) ) {
+				<div class="section-inner group">
+
+					<?php if ( has_nav_menu( 'secondary' ) ) : ?>
+
+						<ul class="secondary-menu dropdown-menu reset-list-style">
+							<?php 
 							wp_nav_menu( array( 
 								'container' 		=> '', 
 								'items_wrap' 		=> '%3$s',
 								'theme_location' 	=> 'secondary'
 							) ); 
-						}
-						?>
-															
-					</ul><!-- .secondary-menu -->
+							?>
+						</ul><!-- .secondary-menu -->
+
+					<?php endif; ?>
+
+					<?php if ( has_nav_menu( 'social' ) ) : ?>
 				
-					<ul class="social-menu">
-						
-						<?php 
-						if ( has_nav_menu( 'social' ) ) {
+						<ul class="social-menu reset-list-style">
+							<?php 
 							wp_nav_menu( array(
 								'theme_location'	=>	'social',
 								'container'			=>	'',
@@ -57,13 +57,11 @@
 								'link_after'		=>	'</span>',
 								'fallback_cb'		=>	'',
 							) );
-							echo '<li id="menu-item-151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151"><a class="search-toggle" href="#"><span class="screen-reader-text">Search</span></a></li>';
-						}
-						?>
-						
-					</ul><!-- .social-menu -->
-				
-				<div class="clear"></div>
+							echo '<li id="menu-item-151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151"><a class="search-toggle" href="?s"><span class="screen-reader-text">Search</span></a></li>';
+							?>
+						</ul><!-- .social-menu -->
+
+					<?php endif; ?>
 				
 				</div><!-- .section-inner -->
 				
@@ -81,35 +79,45 @@
 			
 		</div><!-- .search-container -->
 		
-		<div class="header-wrapper">
+		<header class="header-wrapper">
 		
 			<div class="header">
 					
 				<div class="section-inner">
 				
-					<?php if ( get_theme_mod( 'rowling_logo' ) ) : ?>
-				
-				        <a class="blog-logo" href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>' rel='home'>
-				        	<img src='<?php echo esc_url( get_theme_mod( 'rowling_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>'>
-				        </a>
-				
-					<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : 
-						
-						$title_type = is_singular() ? '2' : '1';
+					<?php 
+
+					$custom_logo_id 	= get_theme_mod( 'custom_logo' );
+					$legacy_logo_url 	= get_theme_mod( 'rowling_logo' );
+					$blog_title_elem 	= ( ( is_front_page() || is_home() ) && ! is_page() ) ? 'h1' : 'div';
+					$blog_title_class 	= $custom_logo_id ? 'blog-logo' : 'blog-title';
+
+					$blog_title 		= get_bloginfo( 'title' );
+					$blog_description 	= get_bloginfo( 'description' );
+
+					if ( $custom_logo_id  || $legacy_logo_url ) : 
+
+						$custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_id, 'full' ) : $legacy_logo_url;
+					
 						?>
-				
-						<h<?php echo $title_type ?> class="blog-title">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
-						</h<?php echo $title_type ?>>
-						
-						<?php if ( get_bloginfo( 'description' ) ) : ?>
-						
-							<h4 class="blog-description">
-								<?php bloginfo( 'description' ); ?>
-							</h4>
-							
+
+						<<?php echo $blog_title_elem; ?> class="<?php echo esc_attr( $blog_title_class ); ?>">
+							<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<img src="<?php echo esc_url( $custom_logo_url ); ?>">
+								<span class="screen-reader-text"><?php echo $blog_title; ?></span>
+							</a>
+						</<?php echo $blog_title_elem; ?>>
+			
+					<?php elseif ( $blog_description || $blog_title ) : ?>
+
+						<<?php echo $blog_title_elem; ?> class="<?php echo esc_attr( $blog_title_class ); ?>">
+							<a href="<?php echo esc_url( home_url() ); ?>" rel="home"><?php echo $blog_title; ?></a>
+						</<?php echo $blog_title_elem; ?>>
+					
+						<?php if ( $blog_description ) : ?>
+							<div class="blog-description"><?php echo wpautop( $blog_description ); ?></div>
 						<?php endif; ?>
-						
+					
 					<?php endif; ?>
 					
 					<div class="nav-toggle">
@@ -128,9 +136,9 @@
 			
 			<div class="navigation">
 				
-				<div class="section-inner">
+				<div class="section-inner group">
 					
-					<ul class="primary-menu">
+					<ul class="primary-menu reset-list-style dropdown-menu">
 						
 						<?php if ( has_nav_menu( 'primary' ) ) {
 
@@ -155,13 +163,11 @@
 															
 					</ul>
 					
-					<div class="clear"></div>
-					
-				</div>
+				</div><!-- .section-inner -->
 				
 			</div><!-- .navigation -->
 				
-			<ul class="mobile-menu">
+			<ul class="mobile-menu reset-list-style">
 				
 				<?php 
 				if ( has_nav_menu( 'primary' ) ) {
@@ -173,6 +179,6 @@
 				
 			</ul><!-- .mobile-menu -->
 				
-		</div><!-- .header-wrapper -->
+		</header><!-- .header-wrapper -->
 
 		<main id="site-content">

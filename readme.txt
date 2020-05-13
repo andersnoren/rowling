@@ -1,8 +1,8 @@
 === Rowling ===
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Requires at least: 4.4
-Tested up to: 5.2
+Requires at least: 4.5
+Tested up to: 5.4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,7 +37,6 @@ All theme specific options are handled through the WordPress Customizer.
 6. The menu should now be displayed on the site.
 
 
-
 == Licenses ==
 
 Lato
@@ -69,8 +68,38 @@ License: GNU GPL v2.0
 Source: http://flexslider.woothemes.com
 
 
-
 == Changelog ==
+
+Version 2.0.0 (2020-05-13)
+-------------------------
+- Updated "Tested up to" to 5.4.1.
+- Moved the archive pagination to pagination.php.
+- Removed license.txt.
+- Updated theme folder structure.
+- Updated output of archive header, added output of archive description.
+- Replaced clear elements with pseudo clearing.
+- Removed all title attributes from links.
+- Restructured adding of widgets.
+- Removed unnecessary admin CSS.
+- Renamed the "regular" block editor font size to "normal", matching expected block editor naming.
+- Removed comments are closed message.
+- Only output custom colors if the accent color is set to something else than the default value.
+- Restructured `comments.php`.
+- Improved accessibility of the search form.
+- Changed elements to be more semantic.
+- Widgets: Cleanup, better escaping, made pluggable.
+- Removed the Flickr widget, since Yahoo is deprecating the Flickr badge API the widget was using.
+- Overall CSS cleanup.
+- Updated post content styles targeting to make them global, and updated other styles accordingly.
+- Collected block styles in the new Blocks CSS section.
+- Updated FontAwesome to 5.13.0, and added support for a bunch more icons.
+- Updated menus to show dropdowns on focus.
+- Added support for the core custom_logo setting, and updated the old rowling_logo setting to only be displayed if you already have a rowling_logo image set (kudos to @poena).
+- Bumped "Requires at least" to 4.5, since Rowling is now using `custom_logo`.
+- Added styling for more inputs and buttons, and improved button block styles.
+- Changed screenshot image format to JPG, reducing file size by 250 KB.
+- Updated block editor styles.
+- Updated theme description.
 
 Version 1.19 (2019-07-21)
 -------------------------

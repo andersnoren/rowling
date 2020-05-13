@@ -23,6 +23,11 @@ jQuery(document).ready(function($) {
 		}
 		return false;
 	});
+
+	// Add focus class to menus
+	$( '.dropdown-menu a' ).on( 'blur focus', function( e ) {
+		$( this ).parents( 'li.menu-item-has-children' ).toggleClass( 'focus' );
+	} );
 	
 	
 	// Hide mobile menu/search container at resize

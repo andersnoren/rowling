@@ -15,7 +15,7 @@
 				'before_title' => '<h3 class="widget-title">',
 				'after_title' => '</h3>',
 				'before_widget' => '<div class="widget widget_search"><div class="widget-content">',
-				'after_widget' => '</div><div class="clear"></div></div>'
+				'after_widget' => '</div></div>'
 			) 
 		);
 		
@@ -28,7 +28,7 @@
 				'before_title' => '<h3 class="widget-title">',
 				'after_title' => '</h3>',
 				'before_widget' => '<div class="widget widget_rowling_recent_posts"><div class="widget-content">',
-				'after_widget' => '</div><div class="clear"></div></div>'
+				'after_widget' => '</div></div>'
 			) 
 		);
 		
@@ -41,7 +41,7 @@
 				'before_title' => '<h3 class="widget-title">',
 				'after_title' => '</h3>',
 				'before_widget' => '<div class="widget widget_categories"><div class="widget-content">',
-				'after_widget' => '</div><div class="clear"></div></div>'
+				'after_widget' => '</div></div>'
 			) 
 		);
 		
@@ -54,7 +54,7 @@
 				'before_title' => '<h3 class="widget-title">',
 				'after_title' => '</h3>',
 				'before_widget' => '<div class="widget widget_archive"><div class="widget-content">',
-				'after_widget' => '</div><div class="clear"></div></div>'
+				'after_widget' => '</div></div>'
 			) 
 		);
 		

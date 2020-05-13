@@ -1,26 +1,24 @@
 <?php get_header(); ?>
 
-<div class="wrapper section-inner">
+<div class="wrapper section-inner group">
 
 	<div class="content">
 												        
-		<div class="post single single-post">
+		<article class="post single single-post">
 			
 			<p class="post-categories"><?php _e( 'Error 404', 'rowling' ); ?></p>
 		
 			<div class="post-header">
-				
 			    <h1 class="post-title"><?php _e( "These are Not the Results You're Looking For", "rowling" ); ?></h1>
-			    					    	    
 			</div><!-- .post-header -->
 				
 			<div class="post-inner">
 				
-				<div class="post-content">
+				<div class="post-content entry-content">
 				
 					<p><?php _e( "It seems like you have tried to open a page that doesn't exist. It could have been deleted, moved, or it never existed at all. Either way, you're welcome to search for what you are looking for with the form below.", "rowling" ); ?></p>
 					
-					<p><?php printf(__( 'You can also return to the %1$s home page %2$s and continue your search from there.', 'rowling' ), '<a href="' . get_home_url() .  '">', '</a>' ); ?></p>
+					<p><?php printf(__( 'You can also return to the %1$s home page %2$s and continue your search from there.', 'rowling' ), '<a href="' . esc_url( get_home_url() ) .  '">', '</a>' ); ?></p>
 					
 					<p><?php get_search_form(); ?></p>
 				
@@ -28,13 +26,11 @@
 									
 			</div><!-- .post-inner -->
 																
-		</div><!-- .post -->
+		</article><!-- .post -->
 									                        		
 	</div><!-- .content -->
 	
 	<?php get_sidebar(); ?>
-	
-	<div class="clear"></div>
 	
 </div><!-- .wrapper.section-inner -->
 								
