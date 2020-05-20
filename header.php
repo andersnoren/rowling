@@ -97,7 +97,7 @@
 
 					if ( $custom_logo_id  || $legacy_logo_url ) : 
 
-						$custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_id, 'full' ) : $legacy_logo_url;
+						$custom_logo_url = $legacy_logo_url ? $legacy_logo_url : wp_get_attachment_image_url( $custom_logo_id, 'full' );
 					
 						?>
 

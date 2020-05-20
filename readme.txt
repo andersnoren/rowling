@@ -70,6 +70,11 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 2.0.1 (2020-05-13)
+-------------------------
+- Fixed the blog title having excessive margins when it's set in the H1 element.
+- Updated the logo output to use `rowling_logo` instead of `custom_logo`, if both are set, to keep behavior consistent (thanks, @jeroenrotty).
+
 Version 2.0.0 (2020-05-13)
 -------------------------
 - Updated "Tested up to" to 5.4.1.
