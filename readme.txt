@@ -70,6 +70,10 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 2.0.2 (2020-05-XX)
+-------------------------
+- Removed bottom margin from post meta on archive pages.
+
 Version 2.0.1 (2020-05-13)
 -------------------------
 - Fixed the blog title having excessive margins when it's set in the H1 element.
