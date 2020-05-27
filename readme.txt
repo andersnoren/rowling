@@ -70,9 +70,10 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
-Version 2.0.2 (2020-05-XX)
+Version 2.0.2 (2020-05-27)
 -------------------------
 - Removed bottom margin from post meta on archive pages.
+- Readded `rowling_archive_navigation()`, now including the pagination.php template file, to prevent child themes breaking (thanks, @marjoriesdaughter).
 
 Version 2.0.1 (2020-05-13)
 -------------------------

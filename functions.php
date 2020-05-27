@@ -5,7 +5,6 @@
    THEME SETUP
    --------------------------------------------------------------------------------------------- */
 
-
 if ( ! function_exists( 'rowling_setup' ) ) :
 	function rowling_setup() {
 		
@@ -54,7 +53,6 @@ endif;
 /* ---------------------------------------------------------------------------------------------
    ENQUEUE JAVASCRIPT
    --------------------------------------------------------------------------------------------- */
-
 
 if ( ! function_exists( 'rowling_load_javascript_files' ) ) :
 	function rowling_load_javascript_files() {
@@ -111,7 +109,6 @@ endif;
 /* ---------------------------------------------------------------------------------------------
    ADD EDITOR STYLES
    --------------------------------------------------------------------------------------------- */
-
 
 if ( ! function_exists( 'rowling_add_editor_styles' ) ) :
 	function rowling_add_editor_styles() {
@@ -193,14 +190,13 @@ endif;
    CHECK FOR JAVASCRIPT
    --------------------------------------------------------------------------------------------- */
 
-
 if ( ! function_exists( 'rowling_html_js_class' ) ) {
-
 	function rowling_html_js_class () {
+
 		echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
+
 	}
 	add_action( 'wp_head', 'rowling_html_js_class', 1 );
-
 }
 
 
@@ -208,9 +204,9 @@ if ( ! function_exists( 'rowling_html_js_class' ) ) {
    RELATED POSTS FUNCTION
    --------------------------------------------------------------------------------------------- */
 
-
 if ( ! function_exists( 'rowling_related_posts' ) ) :
-	function rowling_related_posts( $number_of_posts = 3 ) { ?>
+	function rowling_related_posts( $number_of_posts = 3 ) { 
+		?>
 		
 		<div class="related-posts">
 			
@@ -290,6 +286,20 @@ if ( ! function_exists( 'rowling_related_posts' ) ) :
 		</div><!-- .related-posts -->
 		
 		<?php
+
+	}
+endif;
+
+
+/* ---------------------------------------------------------------------------------------------
+   ARCHIVE NAVIGATION
+   --------------------------------------------------------------------------------------------- */
+
+if ( ! function_exists( 'rowling_archive_navigation' ) ) :
+	function rowling_archive_navigation() {
+
+		get_template_part( 'pagination' );
+
 	}
 endif;
 
@@ -337,6 +347,7 @@ if ( ! function_exists( 'rowling_get_comment_excerpt' ) ) :
 		$comment = get_comment( $comment_ID );
 		$comment_text = strip_tags( $comment->comment_content );
 		$blah = explode( ' ', $comment_text );
+
 		if ( count( $blah ) > $num_words ) {
 			$k = $num_words;
 			$use_dotdotdot = 1;
@@ -344,11 +355,15 @@ if ( ! function_exists( 'rowling_get_comment_excerpt' ) ) :
 			$k = count( $blah );
 			$use_dotdotdot = 0;
 		}
+
 		$excerpt = '';
+
 		for ( $i = 0; $i < $k; $i++ ) {
 			$excerpt .= $blah[$i] . ' ';
 		}
+
 		$excerpt .= ( $use_dotdotdot ) ? '...' : '';
+
 		return apply_filters( 'get_comment_excerpt', $excerpt );
 
 	}
@@ -359,8 +374,7 @@ endif;
    FLEXSLIDER FUNCTION
    --------------------------------------------------------------------------------------------- */
 
-if ( ! function_exists( 'rowling_flexslider' ) ) {
-
+if ( ! function_exists( 'rowling_flexslider' ) ) :
 	function rowling_flexslider( $size ) {
 
 		$attachment_parent = is_page() ? $post->ID : get_the_ID();
@@ -375,44 +389,45 @@ if ( ! function_exists( 'rowling_flexslider' ) ) {
 			'post_type'      => 'attachment',
 		) );
 
-		if ( $images ) { ?>
+		if ( ! $images ) return;
 		
-			<?php if ( ! is_single() ) : // Make it a link if it's an archive ?>
-				<a class="flexslider" href="<?php the_permalink(); ?>">
-			<?php else : // ...and just a div if it's a single post ?>
-				<div class="flexslider">
-			<?php endif; ?>
-			
-			<ul class="slides reset-list-style">
-	
-				<?php foreach ( $images as $image ) :
+		?>
+		
+		<?php if ( ! is_single() ) : // Make it a link if it's an archive ?>
+			<a class="flexslider" href="<?php the_permalink(); ?>">
+		<?php else : // ...and just a div if it's a single post ?>
+			<div class="flexslider">
+		<?php endif; ?>
+		
+		<ul class="slides reset-list-style">
 
-					$attimg = wp_get_attachment_image( $image->ID, $size ); 
+			<?php foreach ( $images as $image ) :
 
-					if ( ! $attimg ) continue;
+				$attimg = wp_get_attachment_image( $image->ID, $size ); 
+
+				if ( ! $attimg ) continue;
+				
+				?>
+				
+				<li>
+					<?php 
 					
-					?>
-					
-					<li>
-						<?php 
-						
-						echo $attimg;
+					echo $attimg;
 
-						if ( ! empty( $image->post_excerpt ) && is_single() ) : ?>
-							<p class="post-image-caption"><span class="fa fw fa-camera"></span><?php echo $image->post_excerpt; ?></p>
-						<?php endif; ?>
-					</li>
-					
-				<?php endforeach; ?>
+					if ( ! empty( $image->post_excerpt ) && is_single() ) : ?>
+						<p class="post-image-caption"><span class="fa fw fa-camera"></span><?php echo $image->post_excerpt; ?></p>
+					<?php endif; ?>
+				</li>
+				
+			<?php endforeach; ?>
 
-			</ul><!-- .slides -->
-			
-			<?php 
-			echo ! is_single() ? '</a>' : '</div>';
-		}
+		</ul><!-- .slides -->
+		
+		<?php 
+		echo ! is_single() ? '</a>' : '</div>';
+
 	}
-
-}
+endif;
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -590,7 +605,6 @@ endif;
 /* ---------------------------------------------------------------------------------------------
    BLOCK EDITOR EDITOR STYLES
    --------------------------------------------------------------------------------------------- */
-
 
 if ( ! function_exists( 'rowling_block_editor_styles' ) ) :
 	function rowling_block_editor_styles() {
