@@ -83,18 +83,8 @@ if ( ! function_exists( 'rowling_load_style' ) ) :
 		$theme_version = wp_get_theme( 'rowling' )->get( 'Version' );
 		$dependencies = array();
 
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		if ( 'off' !== _x( 'on', 'Google Fonts: on or off', 'rowling' ) ) {
-
-			// Register Google Fonts
-			wp_register_style( 'rowling_google_fonts', '//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic|Merriweather:700,900,400italic' );
-			$dependencies[] = 'rowling_google_fonts';
-
-		}
+		wp_register_style( 'rowling_google_fonts', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		$dependencies[] = 'rowling_google_fonts';
 
 		wp_register_style( 'rowling_fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '5.13.0' );
 		$dependencies[] = 'rowling_fontawesome';
@@ -113,17 +103,7 @@ endif;
 if ( ! function_exists( 'rowling_add_editor_styles' ) ) :
 	function rowling_add_editor_styles() {
 
-		add_editor_style( 'assets/css/rowling-classic-editor-styles.css' );
-
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		if ( 'off' !== _x( 'on', 'Google Fonts: on or off', 'rowling' ) ) {
-			$font_url = '//fonts.googleapis.com/css?family=Lato:400,700,900|Playfair+Display:400,700,400italic';
-			add_editor_style( str_replace( ', ', '%2C', $font_url ) );
-		}
+		add_editor_style( 'assets/css/rowling-classic-editor-styles.css', '/assets/css/fonts.css' );
 
 	}
 	add_action( 'init', 'rowling_add_editor_styles' );
@@ -610,20 +590,9 @@ if ( ! function_exists( 'rowling_block_editor_styles' ) ) :
 	function rowling_block_editor_styles() {
 
 		$theme_version = wp_get_theme( 'rowling' )->get( 'Version' );
-		$dependencies = array();
-
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		if ( 'off' !== _x( 'on', 'Google Fonts: on or off', 'rowling' ) ) {
-			wp_register_style( 'rowling-block-editor-styles-font', '//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic|Merriweather:700,900,400italic', false, 1.0, 'all' );
-			$dependencies[] = 'rowling-block-editor-styles-font';
-		}
-
-		// Enqueue the editor styles
-		wp_enqueue_style( 'rowling-block-editor-styles', get_theme_file_uri( '/assets/css/rowling-block-editor-styles.css' ), $dependencies, $theme_version, 'all' );
+		
+		wp_register_style( 'rowling-block-editor-styles-font', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		wp_enqueue_style( 'rowling-block-editor-styles', get_theme_file_uri( '/assets/css/rowling-block-editor-styles.css' ), array( 'rowling-block-editor-styles-font' ), $theme_version, 'all' );
 
 	}
 	add_action( 'enqueue_block_editor_assets', 'rowling_block_editor_styles', 1 );
