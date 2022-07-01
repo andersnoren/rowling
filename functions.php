@@ -83,7 +83,7 @@ if ( ! function_exists( 'rowling_load_style' ) ) :
 		$theme_version = wp_get_theme( 'rowling' )->get( 'Version' );
 		$dependencies = array();
 
-		wp_register_style( 'rowling_google_fonts', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		wp_register_style( 'rowling_google_fonts', get_theme_file_uri( '/assets/css/fonts.css' ) );
 		$dependencies[] = 'rowling_google_fonts';
 
 		wp_register_style( 'rowling_fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '5.13.0' );
@@ -591,7 +591,7 @@ if ( ! function_exists( 'rowling_block_editor_styles' ) ) :
 
 		$theme_version = wp_get_theme( 'rowling' )->get( 'Version' );
 		
-		wp_register_style( 'rowling-block-editor-styles-font', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		wp_register_style( 'rowling-block-editor-styles-font', get_theme_file_uri( '/assets/css/fonts.css' ) );
 		wp_enqueue_style( 'rowling-block-editor-styles', get_theme_file_uri( '/assets/css/rowling-block-editor-styles.css' ), array( 'rowling-block-editor-styles-font' ), $theme_version, 'all' );
 
 	}
