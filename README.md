@@ -2,7 +2,7 @@
 
 Rowling is a clean, simple and elegant magazine theme for WordPress. It features a responsive design, great typography, Block Editor support, social menu support, custom accent color support, custom logo support, gallery post format support, and editor styles.
 
-![Rowling](https://github.com/andersnoren/rowling/blob/main/screenshot.png)
+![Rowling](https://github.com/andersnoren/rowling/blob/master/screenshot.jpg)
 
 You can download the latest stable release of Rowling [from WordPress.org](https://wordpress.org/themes/rowling/).
 
