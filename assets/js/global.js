@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
 	// Toggle mobile menu
 	$(".nav-toggle").on("click", function(){	
 		$(this).toggleClass("active");
+		$(this).attr("aria-expanded", $(this).hasClass("active") ? "true" : "false");
 		$(".mobile-menu").slideToggle();
 		if ($(".search-toggle").hasClass("active")) {
 			$(".search-toggle").removeClass("active");
@@ -18,7 +19,7 @@ jQuery(document).ready(function($) {
 		$(this).toggleClass("active");
 		$(".search-container").slideToggle();
 		if ($(".nav-toggle").hasClass("active")) {
-			$(".nav-toggle").removeClass("active");
+			$(".nav-toggle").removeClass("active").attr("aria-expanded", "false");
 			$(".mobile-menu").slideToggle();
 		}
 		return false;
@@ -31,10 +32,10 @@ jQuery(document).ready(function($) {
 	
 	
 	// Hide mobile menu/search container at resize
-	$(window).resize(function() {
+	$(window).on("resize", function() {
 	
 		if ($(window).width() >= 850) {
-			$(".nav-toggle").removeClass("active");
+			$(".nav-toggle").removeClass("active").attr("aria-expanded", "false");
 			$('.mobile-menu').hide();
 		}
 		
@@ -63,7 +64,7 @@ jQuery(document).ready(function($) {
 	
 	// smooth scroll to the top	
 	jQuery(document).ready(function($){
-	    $('.to-the-top').click(function(){
+	    $('.to-the-top').on('click', function(){
 	        $("html, body").animate({ scrollTop: 0 }, 500);
 	        return false;
 	    });
@@ -92,7 +93,7 @@ jQuery(document).ready(function($) {
 
 	resizeVideo(vidSelector);
 
-	$(window).resize(function() {
+	$(window).on("resize", function() {
 		resizeVideo(vidSelector);
 	});
 	

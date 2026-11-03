@@ -25,4 +25,4 @@ Do you want to support the continued development of Rowling? You can send me a P
 
 ## Resources
 - [About Rowling](https://andersnoren.se/teman/rowling-wordpress-theme/)
-- [Rowling demo site](https://andersnoren.se/themes/rowling/)
+- [Rowling demo site](https://rowling.andersnoren.se)

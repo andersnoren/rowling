@@ -103,7 +103,7 @@ endif;
 if ( ! function_exists( 'rowling_add_editor_styles' ) ) :
 	function rowling_add_editor_styles() {
 
-		add_editor_style( 'assets/css/rowling-classic-editor-styles.css', '/assets/css/fonts.css' );
+		add_editor_style( array( 'assets/css/rowling-classic-editor-styles.css', 'assets/css/fonts.css' ) );
 
 	}
 	add_action( 'init', 'rowling_add_editor_styles' );
@@ -589,11 +589,16 @@ endif;
 if ( ! function_exists( 'rowling_block_editor_styles' ) ) :
 	function rowling_block_editor_styles() {
 
+		// Only load in the editor. Hooked to enqueue_block_assets so the styles reach the iframed editor canvas.
+		if ( ! is_admin() ) {
+			return;
+		}
+
 		$theme_version = wp_get_theme( 'rowling' )->get( 'Version' );
 		
 		wp_register_style( 'rowling-block-editor-styles-font', get_theme_file_uri( '/assets/css/fonts.css' ) );
 		wp_enqueue_style( 'rowling-block-editor-styles', get_theme_file_uri( '/assets/css/rowling-block-editor-styles.css' ), array( 'rowling-block-editor-styles-font' ), $theme_version, 'all' );
 
 	}
-	add_action( 'enqueue_block_editor_assets', 'rowling_block_editor_styles', 1 );
+	add_action( 'enqueue_block_assets', 'rowling_block_editor_styles', 1 );
 endif;

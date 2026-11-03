@@ -120,15 +120,17 @@
 					
 					<?php endif; ?>
 					
-					<div class="nav-toggle">
+					<button type="button" class="nav-toggle" aria-expanded="false">
+
+						<span class="screen-reader-text"><?php _e( 'Toggle the mobile menu', 'rowling' ); ?></span>
 						
-						<div class="bars">
-							<div class="bar"></div>
-							<div class="bar"></div>
-							<div class="bar"></div>
-						</div>
+						<span class="bars" aria-hidden="true">
+							<span class="bar"></span>
+							<span class="bar"></span>
+							<span class="bar"></span>
+						</span>
 						
-					</div><!-- .nav-toggle -->
+					</button><!-- .nav-toggle -->
 				
 				</div><!-- .section-inner -->
 				
