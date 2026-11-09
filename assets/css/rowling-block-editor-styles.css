@@ -419,5 +419,5 @@ cite:before,
 	letter-spacing: 1px;
 	color: #fff;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.1);
-	-webkit-appearance: none;
+	appearance: none;
 }

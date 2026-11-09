@@ -11,7 +11,7 @@
 				
 				<p class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'title' ) ); ?></a></p>
 				
-				<p class="attribution"><?php printf( __( 'Theme by %s', 'rowling' ), '<a href="https://www.andersnoren.se">Anders Nor&eacute;n</a>' ); ?></p>
+				<p class="attribution"><?php printf( __( 'Theme by %s', 'rowling' ), '<a href="https://andersnoren.se">Anders Nor&eacute;n</a>' ); ?></p>
 				
 			</div><!-- .section-inner -->
 			

@@ -90,6 +90,13 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 2.1.3 (2026-11-09)
+-------------------------
+- Removed the WOFF versions of the Font Awesome icon fonts. All browsers that WordPress supports load the WOFF2 versions, which are smaller, so this makes the theme download smaller without changing anything on the front-end.
+- Updated the theme author link in the footer to https://andersnoren.se.
+- Removed vendor prefixes that are no longer needed, and replaced the rest with their standard equivalents where available.
+- Fixed the placeholder text color not being applied in Firefox.
+
 Version 2.1.2 (2026-11-03)
 -------------------------
 - Tested with WordPress 7.1.
@@ -281,6 +288,9 @@ Version 1.00 (2015-02-03)
 
 
 == Upgrade Notice ==
+
+= 2.1.3 =
+Removes unused icon font files and outdated CSS to make the theme smaller, fixes the placeholder color in Firefox, and updates the author link.
 
 = 2.1.2 =
 Tested with WordPress 7.1. Makes the mobile menu toggle keyboard accessible, and fixes the editor styles.
